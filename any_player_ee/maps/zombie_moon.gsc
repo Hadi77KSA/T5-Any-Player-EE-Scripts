@@ -1172,7 +1172,7 @@ give_player_model_override( entity_num )
 		entity_num = self.zm_random_char;
 		self.entity_num = entity_num;
 	}
-	else*/ if(level._override_num_chars_connected == (GetNumExpectedPlayers() -1 ))
+	else*/ if(level._override_num_chars_connected == (GetNumExpectedPlayers() -1 ) )
 	{
 		self.zm_random_char = 3;
 		self.entity_num = 3;
