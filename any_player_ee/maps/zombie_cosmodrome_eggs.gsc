@@ -797,7 +797,7 @@ wait_for_combo( trig )
 
 	weapon_combo_spot = GetStruct( "weapon_combo_spot", "targetname" );
 	ray_gun_hit = false;
-	doll_hit	= false;
+	doll_hit	= getPlayers().size == 1;
 	crossbow_hit = false;
 
 /*
