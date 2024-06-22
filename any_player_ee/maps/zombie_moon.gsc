@@ -1167,7 +1167,7 @@ give_player_model_override( entity_num )
 		level._override_num_chars_connected ++;
 	}
 
-	if( IsDefined( self.zm_random_char ) && !flag( "solo_game" ) )
+	if( IsDefined( self.zm_random_char ) && getPlayers().size != 1 )
 	{
 		entity_num = self.zm_random_char;
 		self.entity_num = entity_num;
