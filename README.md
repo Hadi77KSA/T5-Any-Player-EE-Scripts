@@ -47,4 +47,7 @@ The Vril Generator is given to the player playing as Richtofen regardless of the
 Additionally, on solo, the player will always spawn as Richtofen.
 
 ## Credits
-Hadi77KSA - Me
+Hadi77KSA - Me - hadikm77@hotmail.com
+
+## Notice
+THIS MATERIAL IS NOT MADE OR SUPPORTED BY ACTIVISION.
