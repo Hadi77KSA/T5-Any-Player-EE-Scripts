@@ -1,5 +1,5 @@
 # T5-Any-Player-EE-Scripts
-This mod makes the Easter Eggs of the Black Ops maps Ascension, Shangri-La, and Moon possible with any number of players. For Ascension and Shangri-La, the modifications were made to match the changes applied by the [Solo Easter Eggs mod for BO3](https://steamcommunity.com/sharedfiles/filedetails/?id=1944930083)
+This mod makes the Easter Eggs of the Black Ops maps Ascension, Shangri-La, and Moon possible with any number of players. For Ascension and Shangri-La, the modifications were made to match the changes applied by the [Solo Easter Eggs mod for BO3](https://steamcommunity.com/sharedfiles/filedetails/?id=1944930083).
 
 ## Installation
 1. [Download the repository](https://github.com/Hadi77KSA/T5-Any-Player-EE-Scripts/archive/refs/heads/main.zip).
@@ -32,7 +32,7 @@ On co-op, this step is unchanged.
 
 ### Shangri-La
 #### Entering Eclipse
-Requires pushing only as many button as there are players instead of all.
+Requires pushing only as many buttons as there are players instead of all.
 
 #### Matching Tiles Puzzle
 On solo, requires walking over all tiles on the side where the button for making the tiles appear is to complete the step.  
@@ -45,3 +45,6 @@ On co-op, requires all players except one to be at the bottom of the water slide
 ### Moon
 The Vril Generator is given to the player playing as Richtofen regardless of the number of players and regardless of the completions of the previous maps' Easter Eggs.  
 Additionally, on solo, the player will always spawn as Richtofen.
+
+## Credits
+Hadi77KSA - Me
