@@ -12,8 +12,8 @@ This mod makes the Easter Eggs of the Black Ops maps Ascension, Shangri-La, and 
 ### Alternative Installation for Plutonium
 - Follow steps 1 & 2 from the main installation instructions.
 - Go to `%localappdata%\Plutonium\storage\t5` by pressing Win+R then pasting the mentioned path then press OK.
-- Open the `any_player_ee` folder and copy the `maps` folder from inside of it.
-- Paste the `maps` folder into the `t5` folder.
+- Open the `any_player_ee` folder and copy the `maps` and `scripts` folders from inside of it.
+- Paste the `maps` and `scripts` folders into the `t5` folder.
 
 This makes the mod load automatically instead of having to select it from in-game.
 
