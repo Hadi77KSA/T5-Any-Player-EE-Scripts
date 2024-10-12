@@ -1,22 +1,18 @@
 init()
 {
-	thread onPlayerConnect();
+	switch ( getdvar( "mapname" ) )
+	{
+		case "zombie_cosmodrome":
+		case "zombie_temple":
+		case "zombie_moon":
+			thread onPlayerConnect();
+	}
 }
 
 onPlayerConnect()
 {
 	level notify( "any_player_ee_mod_message" );
 	level endon( "any_player_ee_mod_message" );
-
-	switch ( getdvar( "mapname" ) )
-	{
-		case "zombie_cosmodrome":
-		case "zombie_temple":
-		case "zombie_moon":
-			break;
-		default:
-			return;
-	}
 
 	for (;;)
 	{
@@ -42,8 +38,6 @@ display_mod_message()
 		case "zombie_moon":
 			mapnameStr = "Moon";
 			break;
-		default:
-			return;
 	}
 
 	self iPrintLn( "^2Any Player EE Mod ^5" + mapnameStr );
