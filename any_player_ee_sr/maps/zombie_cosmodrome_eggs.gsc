@@ -383,10 +383,10 @@ switch_watcher()
 
 		timeout = GetTime() + 500;	// in milliseconds
 
-		// if ( IsDefined( level.sp_egg_testing ) )
-		// {
+		/* if ( IsDefined( level.sp_egg_testing ) ) */ if ( getPlayers().size < 4 )
+		{
 			timeout += 100000;	// Longer timeout
-		// }
+		}
 
 		while ( GetTime() < timeout )
 		{
