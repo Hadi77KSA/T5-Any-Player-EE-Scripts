@@ -3,8 +3,8 @@ This mod makes the Easter Eggs of the Black Ops maps Ascension and Shangri-La po
 
 ## Installation
 1. [Download the repository](https://github.com/Hadi77KSA/T5-Any-Player-EE-Scripts/archive/refs/heads/speedruns.zip).
-2. Extract the `any_player_ee` folder from the zip file that was downloaded.
-3. Move the `any_player_ee` folder to the correct directory:
+2. Extract the `any_player_ee_sr` folder from the zip file that was downloaded.
+3. Move the `any_player_ee_sr` folder to the correct directory:
     - For [Game_Mod](https://github.com/Nukem9/LinkerMod/releases), install to `BO1_GAME_FOLDER\mods`
     - For Plutonium, follow their guide for T5: https://plutonium.pw/docs/modding/loading-mods/#loading-mods--custom-zombies-maps-for-bo1
 4. Start the game and select the mod from the in-game `Mods` menu.
@@ -12,7 +12,7 @@ This mod makes the Easter Eggs of the Black Ops maps Ascension and Shangri-La po
 ### Alternative Installation for Plutonium
 - Follow steps 1 & 2 from the main installation instructions.
 - Go to `%localappdata%\Plutonium\storage\t5` by pressing Win+R then pasting the mentioned path then press OK.
-- Open the `any_player_ee` folder and copy the `maps` and `scripts` folders from inside of it.
+- Open the `any_player_ee_sr` folder and copy the `maps` and `scripts` folders from inside of it.
 - Paste the `maps` and `scripts` folders into the `t5` folder.
 
 This makes the mod load automatically instead of having to select it from in-game.
