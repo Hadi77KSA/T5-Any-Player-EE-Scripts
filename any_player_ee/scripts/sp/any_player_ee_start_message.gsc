@@ -4,7 +4,6 @@ init()
 	{
 		case "zombie_cosmodrome":
 		case "zombie_temple":
-		case "zombie_moon":
 			thread onPlayerConnect();
 	}
 }
@@ -35,10 +34,7 @@ display_mod_message()
 		case "zombie_temple":
 			mapnameStr = "Shangri-La";
 			break;
-		case "zombie_moon":
-			mapnameStr = "Moon";
-			break;
 	}
 
-	self iPrintLn( "^2Any Player EE Mod ^5" + mapnameStr );
+	self iPrintLn( "^2Any Player EE SR Mod ^5" + mapnameStr );
 }

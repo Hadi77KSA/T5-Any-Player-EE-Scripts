@@ -1,8 +1,8 @@
 # T5-Any-Player-EE-Scripts
-This mod makes the Easter Eggs of the Black Ops maps Ascension, Shangri-La, and Moon possible with any number of players. For Ascension and Shangri-La, the modifications were made to match the changes applied by the [Solo Easter Eggs mod for BO3](https://steamcommunity.com/sharedfiles/filedetails/?id=1944930083).
+This mod makes the Easter Eggs of the Black Ops maps Ascension and Shangri-La possible with any number of players for the purpose of speedruns. For Ascension, the modifications were made to mix between the old BO1 solo mod and the [Solo Easter Eggs mod for BO3](https://steamcommunity.com/sharedfiles/filedetails/?id=1944930083). For Shangri-La, the modifications were made to match the changes applied by the BO3 Solo Easter Eggs mod.
 
 ## Installation
-1. [Download the repository](https://github.com/Hadi77KSA/T5-Any-Player-EE-Scripts/archive/refs/heads/main.zip).
+1. [Download the repository](https://github.com/Hadi77KSA/T5-Any-Player-EE-Scripts/archive/refs/heads/speedruns.zip).
 2. Extract the `any_player_ee` folder from the zip file that was downloaded.
 3. Move the `any_player_ee` folder to the correct directory:
     - For [Game_Mod](https://github.com/Nukem9/LinkerMod/releases), install to `BO1_GAME_FOLDER\mods`
@@ -20,7 +20,7 @@ This makes the mod load automatically instead of having to select it from in-gam
 ## Features
 ### Ascension
 #### Space Monkeys Round Buttons
-Requires only as many buttons as there are players instead of all.
+Requires all 4 buttons to be pressed within 100 seconds in the case of less than 4 players.
 
 #### Lunar Lander Letters
 On solo, does not require the player to be riding the lander to be able to collect the letters.  
@@ -41,10 +41,6 @@ On co-op, this step is unchanged.
 #### Water Slide
 On solo, the player is only required to go down the water slide.  
 On co-op, requires all players except one to be at the bottom of the water slide standing on the pressure plate, then the remaining player to go down the slide while the rest are on the pressure plate.
-
-### Moon
-The Vril Generator is given to the player playing as Richtofen regardless of the number of players and regardless of the completions of the previous maps' Easter Eggs.  
-Additionally, on solo, the player will always spawn as Richtofen.
 
 ## Credits
 Hadi77KSA - Me - hadikm77@hotmail.com

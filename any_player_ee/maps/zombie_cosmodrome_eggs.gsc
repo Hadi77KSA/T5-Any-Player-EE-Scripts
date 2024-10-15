@@ -382,12 +382,12 @@ switch_watcher()
 		level waittill( "sync_button_pressed" );
 
 		timeout = GetTime() + 500;	// in milliseconds
-/*
-		if ( IsDefined( level.sp_egg_testing ) )
-		{
+
+		// if ( IsDefined( level.sp_egg_testing ) )
+		// {
 			timeout += 100000;	// Longer timeout
-		}
-*/
+		// }
+
 		while ( GetTime() < timeout )
 		{
 			pressed = 0;
@@ -399,7 +399,7 @@ switch_watcher()
 				}
 			}
 			// If everyone pressed it in time
-			if ( pressed == getPlayers().size )
+			if ( pressed == 4 )
 			{
 				flag_set( "switches_synced" );
 
