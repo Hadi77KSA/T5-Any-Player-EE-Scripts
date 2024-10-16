@@ -5,6 +5,7 @@ init()
 		case "zombie_cosmodrome":
 		case "zombie_temple":
 			thread onPlayerConnect();
+			maps\_utility::OnSaveRestored_Callback( ::on_save_restored );
 	}
 }
 
@@ -18,6 +19,12 @@ onPlayerConnect()
 		level waittill( "connected", player );
 		player thread display_mod_message();
 	}
+}
+
+on_save_restored()
+{
+	waittillframeend;
+	common_scripts\utility::array_thread( getPlayers(), ::display_mod_message );
 }
 
 display_mod_message()
