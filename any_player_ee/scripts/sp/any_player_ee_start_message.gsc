@@ -47,5 +47,5 @@ display_mod_message()
 			break;
 	}
 
-	self iPrintLn( "^2Any Player EE Mod ^5" + mapnameStr );
+	self iPrintLn( "^3Any Player EE Mod ^5" + mapnameStr );
 }
