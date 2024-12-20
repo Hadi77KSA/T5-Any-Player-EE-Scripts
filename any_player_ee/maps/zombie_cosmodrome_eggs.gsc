@@ -991,13 +991,10 @@ watch_lander_touch()
 {
 	level endon( "lander_grounded" );
 	level endon( "letter_acquired" );
-
 	base = getent( "lander_base", "script_noteworthy" );
 
 	while ( !base isTouching( self ) )
-	{
 		wait 0.05;
-	}
 
 	if ( getPlayers().size == 1 )
 		self notify( "trigger" );
