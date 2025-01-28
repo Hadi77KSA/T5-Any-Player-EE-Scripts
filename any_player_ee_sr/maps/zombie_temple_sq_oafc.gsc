@@ -372,7 +372,10 @@ oafc_trigger_thread(tiles, set)
 						{
 							if(IsDefined(level._picked_tile1) && ( IsDefined(level._picked_tile2) || getPlayers().size == 1 ))
 							{
-								if(level._picked_tile1.tile == level._picked_tile2.tile || getPlayers().size == 1)
+								if ( getPlayers().size == 1 )
+									level._picked_tile2 = level._picked_tile1;
+
+								if(level._picked_tile1.tile == level._picked_tile2.tile)
 								{
 									level._picked_tile1 playsound( "evt_sq_oafc_glyph_correct" );
 									level._picked_tile2 playsound( "evt_sq_oafc_glyph_correct" );
