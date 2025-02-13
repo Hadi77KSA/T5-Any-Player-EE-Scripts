@@ -6,6 +6,7 @@ init()
 		case "zombie_temple":
 			thread onPlayerConnect();
 			maps\_utility::OnSaveRestored_Callback( ::on_save_restored );
+			break;
 	}
 }
 
