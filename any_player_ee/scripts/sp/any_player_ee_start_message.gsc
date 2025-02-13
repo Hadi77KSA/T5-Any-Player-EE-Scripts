@@ -7,6 +7,7 @@ init()
 		case "zombie_moon":
 			thread onPlayerConnect();
 			maps\_utility::OnSaveRestored_Callback( ::on_save_restored );
+			break;
 	}
 }
 
