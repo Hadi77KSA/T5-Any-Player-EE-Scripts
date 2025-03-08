@@ -38,13 +38,13 @@ plate_counter()
 
 	while(1)
 	{
-		if(level._on_plate >= ( getPlayers().size - 1 ) && !flag("dgcwf_on_plate"))
+		if(level._on_plate >= 3 && !flag("dgcwf_on_plate"))
 		{
 			flag_set("dgcwf_on_plate");
 		}
 		else
 		{
-			if(flag("dgcwf_on_plate") && level._on_plate < ( getPlayers().size - 1 ))
+			if(flag("dgcwf_on_plate") && level._on_plate < 3)
 			{
 				flag_clear("dgcwf_on_plate");
 			}
@@ -128,9 +128,9 @@ plate_monitor(trig)
 			level._on_plate ++;
 		}
 
-		trig playsound( "evt_sq_dgcwf_plate_" + ( level._on_plate + ( 4 - getPlayers().size ) ) );
+		trig playsound( "evt_sq_dgcwf_plate_" + level._on_plate );
 
-		if( level._on_plate <= ( getPlayers().size - 2 ) && !flag( "dgcwf_sw1_pressed" ) )
+		if( level._on_plate <= 2 && !flag( "dgcwf_sw1_pressed" ) )
 		{
 			self thread maps\_zombiemode_audio::create_and_play_dialog( "eggs", "quest2", undefined, 0 );
 		}
@@ -155,7 +155,7 @@ plate_monitor(trig)
 			return;
 		}
 
-		if( level._on_plate < ( getPlayers().size - 1 ) && !flag( "dgcwf_sw1_pressed" ) )
+		if( level._on_plate < 3 && !flag( "dgcwf_sw1_pressed" ) )
 		{
 			self thread maps\_zombiemode_audio::create_and_play_dialog( "eggs", "quest2", undefined, 2 );
 		}
@@ -188,7 +188,26 @@ plate_trigger()
 	for(i = 0; i < players.size; i ++)
 	{
 		players[i] thread plate_monitor(self);
+		players[i] thread onPlayerDisconnect( players, self );
 	}
+}
+
+onPlayerDisconnect( players, trig )
+{
+	trig endon( "death" );
+	level endon( "sq_DgCWf_over" );
+	self waittill( "disconnect" );
+	level.n_players_since_dgcwf_start--;
+	level._on_plate = 0;
+
+	for ( i = 0; i < players.size && level._on_plate < 4; i++ )
+	{
+		if ( isdefined( players[i] ) && players[i] isTouching( trig ) && players[i].sessionstate != "spectator" )
+			level._on_plate++;
+	}
+
+	if ( level.n_players_since_dgcwf_start < 4 )
+		level._on_plate += 4 - level.n_players_since_dgcwf_start;
 }
 
 begin_dgcwf_vox()
@@ -282,10 +301,14 @@ init_stage()
 {
 
 	level._on_plate = 0;
+	level.n_players_since_dgcwf_start = get_players().size;
 
 	if(get_players().size > 1)
 	{
 		flag_clear("dgcwf_on_plate");
+
+		if ( level.n_players_since_dgcwf_start < 4 )
+			level._on_plate += 4 - level.n_players_since_dgcwf_start;
 	}
 
 	flag_clear("dgcwf_sw1_pressed");
@@ -347,6 +370,8 @@ play_success_audio()
 
 exit_stage(success)
 {
+	level.n_players_since_dgcwf_start = undefined;
+
 	if(IsDefined(level._debug_plate))
 	{
 		level._debug_plate = undefined;
