@@ -4,7 +4,8 @@ any_player_ee_sr\maps\zombie_cosmodrome_eggs.gsc
 - 0x87AF2C99 (before v2.0)
 
 any_player_ee_sr\maps\zombie_temple_sq.gsc
-- 0xC7C6112E (v2.0–current_sr)
+- 0x87FEA21D (v2.0.3–current_sr)
+- 0xC7C6112E (v2.0–v2.0.2)
 
 any_player_ee_sr\maps\zombie_temple_sq_dgcwf.gsc
 - 0x98078B35 (v2.0–current_sr)
