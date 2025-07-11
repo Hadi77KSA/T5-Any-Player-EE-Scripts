@@ -9,6 +9,8 @@ This mod makes the Easter Eggs of the Black Ops maps Ascension, Shangri-La, and 
     - For Plutonium, follow their guide for T5: https://plutonium.pw/docs/modding/loading-mods/#loading-mods--custom-zombies-maps-for-bo1
 4. Start the game and select the mod from the in-game `Mods` menu.
 
+![mods menu](https://github.com/user-attachments/assets/57d15904-aca5-4727-a4e6-e7dc1f06f742)
+
 ### Alternative Installation for Plutonium
 - Follow steps 1 & 2 from the main installation instructions.
 - Go to `%localappdata%\Plutonium\storage\t5` by pressing Win+R then pasting the mentioned path then press OK.
