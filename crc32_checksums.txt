@@ -1,20 +1,25 @@
 any_player_ee_sr\maps\zombie_cosmodrome_eggs.gsc
-- 0x2A443714 (v2.0.1–current_sr)
+- 0x429B9653 (v2.0.1–current_sr)
+- 0x2A443714
 - 0x75078966 (v2.0)
 - 0x87AF2C99 (before v2.0)
 
 any_player_ee_sr\maps\zombie_temple_sq.gsc
-- 0x87FEA21D (v2.0.3–current_sr)
+- 0x0BC4241D (v2.0.3–current_sr)
+- 0x87FEA21D
 - 0xC7C6112E (v2.0–v2.0.2)
 
 any_player_ee_sr\maps\zombie_temple_sq_dgcwf.gsc
-- 0x98078B35 (v2.0–current_sr)
+- 0x79B9C52E (v2.0–current_sr)
+- 0x98078B35
 
 any_player_ee_sr\maps\zombie_temple_sq_oafc.gsc
-- 0x2DD794FD (v2.0.1–current_sr)
+- 0x1A3BE8B9 (v2.0.1–current_sr)
+- 0x2DD794FD
 - 0xC836F0CE (v2.0)
 
 any_player_ee_sr\scripts\sp\any_player_ee_start_message.gsc
-- 0xDB04315B (v2.0.2–current_sr)
+- 0x47466654 (v2.0.2–current_sr)
+- 0xDB04315B
 - 0x17078542 (v2.0–v2.0.1)
 - 0x584E172D (before v2.0)
