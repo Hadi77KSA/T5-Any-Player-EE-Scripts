@@ -19,34 +19,34 @@ onPlayerConnect()
 	for (;;)
 	{
 		level waittill( "connected", player );
-		player thread display_mod_message();
+		player thread msg();
 	}
 }
 
 on_save_restored()
 {
 	waittillframeend;
-	common_scripts\utility::array_thread( getPlayers(), ::display_mod_message );
+	common_scripts\utility::array_thread( getPlayers(), ::msg );
 }
 
-display_mod_message()
+msg()
 {
 	self endon( "disconnect" );
 	common_scripts\utility::flag_wait( "all_players_connected" );
-	mapnameStr = "";
+	mapname = "";
 
 	switch ( getdvar( "mapname" ) )
 	{
 		case "zombie_cosmodrome":
-			mapnameStr = "Ascension";
+			mapname = "Ascension";
 			break;
 		case "zombie_temple":
-			mapnameStr = "Shangri-La";
+			mapname = "Shangri-La";
 			break;
 		case "zombie_moon":
-			mapnameStr = "Moon";
+			mapname = "Moon";
 			break;
 	}
 
-	self iPrintLn( "^3Any Player EE Mod ^5" + mapnameStr );
+	self iPrintLn( "^3Any Player EE Mod ^5", mapname );
 }

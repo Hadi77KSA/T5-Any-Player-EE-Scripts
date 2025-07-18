@@ -635,7 +635,7 @@ lander_monitor()
 			// Spawn trigger
 			trig = Spawn( "trigger_radius", model.origin, 0, 200, 150 );
 			trig thread letter_grab( letter, model );
-			trig thread watch_lander_touch();
+			trig thread lander_trig();
 			flag_wait("lander_grounded");
 
 			// No letter taken
@@ -987,7 +987,7 @@ samantha_is_angry()
 	playsoundatposition( "zmb_samantha_scream", (0,0,0) );
 }
 
-watch_lander_touch()
+lander_trig()
 {
 	level endon( "lander_grounded" );
 	level endon( "letter_acquired" );
