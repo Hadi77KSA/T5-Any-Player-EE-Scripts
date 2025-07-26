@@ -2,7 +2,7 @@
 This mod makes the Easter Eggs of the Black Ops maps Ascension, Shangri-La, and Moon possible with any number of players. For Ascension and Shangri-La, the modifications were made to match the changes applied by the [Solo Easter Eggs mod for BO3](https://steamcommunity.com/sharedfiles/filedetails/?id=1944930083).
 
 ## Installation
-1. [Download the latest release](https://github.com/Hadi77KSA/T5-Any-Player-EE-Scripts/archive/refs/tags/current.zip).
+1. [Download the latest release](https://github.com/Hadi77KSA/T5-Any-Player-EE-Scripts/releases/download/current/release.zip).
 2. Extract the `any_player_ee` folder from the zip file that was downloaded.
 3. Move the `any_player_ee` folder to the correct directory:
     - For [Game_Mod](https://github.com/Nukem9/LinkerMod/releases), install to `BO1_GAME_FOLDER\mods`
