@@ -16,7 +16,7 @@
 
 init()
 {
-	thread scripts\sp\any_player_ee_start_message::init();
+	thread scripts\sp\any_player_ee_start_message::init_func();
 
 	PreCacheModel("p_zom_moon_py_collector_fill");
 	PreCacheModel("p_zom_moon_py_collector");

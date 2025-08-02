@@ -1,4 +1,4 @@
-init()
+init_func()
 {
 	switch ( getdvar( "mapname" ) )
 	{
@@ -13,9 +13,6 @@ init()
 
 onPlayerConnect()
 {
-	level notify( "any_player_ee_mod_message" );
-	level endon( "any_player_ee_mod_message" );
-
 	for (;;)
 	{
 		level waittill( "connected", player );
