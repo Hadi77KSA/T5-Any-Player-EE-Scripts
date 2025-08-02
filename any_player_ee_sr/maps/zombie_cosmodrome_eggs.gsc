@@ -39,7 +39,7 @@
 //
 init()
 {
-	thread scripts\sp\any_player_ee_start_message::init();
+	thread scripts\sp\any_player_ee_start_message::init_func();
 //	NOTE:  Uncomment this to do Solo testing for the easter egg. (and any section which checks the variable)
 //		You will automatically be given a black hole bomb and an upgraded thundergun
 //		You still need to hit all four switches, but you're given 35 seconds

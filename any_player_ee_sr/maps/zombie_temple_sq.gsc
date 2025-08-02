@@ -26,7 +26,7 @@
 
 init()
 {
-	thread scripts\sp\any_player_ee_start_message::init();
+	thread scripts\sp\any_player_ee_start_message::init_func();
 	PreCacheModel("p_ztem_skeleton");
 	PreCacheModel("p_ztem_meteorite_small");
 	PreCacheModel("p_ztem_meteorite");
