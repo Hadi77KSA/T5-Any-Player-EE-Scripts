@@ -57,6 +57,13 @@ On co-op, requires all players except one to be at the bottom of the water slide
 The Vril Generator is given to the player playing as Richtofen regardless of the number of players and regardless of the completions of the previous maps' Easter Eggs.  
 Additionally, on solo, the player will always spawn as Richtofen.
 
+## FAQ
+### - Q: I am stuck on some Easter Egg step. Could you help?
+A: Generally, if you ask for help with any Easter Egg step, I will try to assist you. Do note that the scripts do not modify anything outside of what is mentioned. Refer to the **Features** section for the changes made by the scripts, otherwise you could check existing guides such as the ones from the [CoD Fandom Wiki](https://callofduty.fandom.com/wiki/Category:Call_of_Duty:_Black_Ops_Zombies_Main_Quests).
+
+### Q: How do I make sure the scripts are loaded?
+A: The Any Player EE scripts come with a message in green/blue/yellow colours that appears when the player loads in indicating the scripts are loaded. Another method of checking is to get the host to execute the Plutonium [console](https://plutonium.pw/docs/opening-console/) commands `flashScriptHashes; scriptHashes`. If the scripts are loaded, they will appear in the list of scripts.
+
 ## Credits
 Hadi77KSA - Me - hadikm77@hotmail.com
 
