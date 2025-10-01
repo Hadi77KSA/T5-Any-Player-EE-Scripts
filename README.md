@@ -58,7 +58,7 @@ The Vril Generator is given to the player playing as Richtofen regardless of the
 Additionally, on solo, the player will always spawn as Richtofen.
 
 ## FAQ
-### - Q: I am stuck on some Easter Egg step. Could you help?
+### Q: I am stuck on some Easter Egg step. Could you help?
 A: Generally, if you ask for help with any Easter Egg step, I will try to assist you. Do note that the scripts do not modify anything outside of what is mentioned. Refer to the **Features** section for the changes made by the scripts, otherwise you could check existing guides such as the ones from the [CoD Fandom Wiki](https://callofduty.fandom.com/wiki/Category:Call_of_Duty:_Black_Ops_Zombies_Main_Quests).
 
 ### Q: How do I make sure the scripts are loaded?
