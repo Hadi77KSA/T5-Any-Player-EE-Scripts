@@ -37,7 +37,7 @@ On solo, does not require the player to be riding the lander to be able to colle
 On co-op, this step is unchanged.
 
 #### Damaging the Orb
-On solo, the Matryoshka Dolls are not required. However, the rest of the weapons are required, which are: Gersh Device, Zeus Cannon (upgraded Thunder Gun),  Porter's X2 Ray Gun (upgraded Ray Gun).  
+On solo, the Matryoshka Dolls are not required. However, the rest of the weapons are required, which are: Gersh Device, Zeus Cannon (upgraded Thunder Gun), Porter's X2 Ray Gun (upgraded Ray Gun).  
 On co-op, this step is unchanged.
 
 ### Shangri-La
