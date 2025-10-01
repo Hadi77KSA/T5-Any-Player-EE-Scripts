@@ -7,21 +7,21 @@ This mod makes the Easter Eggs of the Black Ops maps Ascension and Shangri-La po
 
 ## Installation
 1. Download the latest release. [`release_main.zip`](https://github.com/Hadi77KSA/T5-Any-Player-EE-Scripts/releases/latest/download/release_main.zip) or [`release_speedruns.zip`](https://github.com/Hadi77KSA/T5-Any-Player-EE-Scripts/releases/latest/download/release_speedruns.zip)
-2. Extract the `any_player_ee`/`any_player_ee_sr` folder from the zip file that was downloaded.
+2. Extract the `any_player_ee`/`any_player_ee_sr` folder from the ZIP file that was downloaded.
 3. Move the `any_player_ee`/`any_player_ee_sr` folder to the correct directory:
     - For [Game_Mod](https://github.com/Nukem9/LinkerMod/releases), install to `BO1_GAME_FOLDER\mods`
     - For Plutonium, follow their guide for T5: https://plutonium.pw/docs/modding/loading-mods/#loading-mods--custom-zombies-maps-for-bo1
-4. Start the game and select the mod from the in-game `Mods` menu.
+4. Start the game and load the mod from the in-game `Mods` menu.
 
 ![mods menu](https://github.com/user-attachments/assets/57d15904-aca5-4727-a4e6-e7dc1f06f742)
 
 ### Alternative Installation for Plutonium
+Following this method makes the scripts be loaded automatically without needing to select the mod from the in-game `Mods` menu.
+
 - Follow steps 1 & 2 from the main installation instructions.
 - Go to `%localappdata%\Plutonium\storage\t5` by pressing Win+R then pasting the mentioned path then press OK.
 - Open the `any_player_ee`/`any_player_ee_sr` folder and copy the `any_player_ee.iwd`/`any_player_ee_sr.iwd` file from inside of it.
 - Paste the `any_player_ee.iwd`/`any_player_ee_sr.iwd` file into the `t5` folder.
-
-This makes the mod load automatically instead of having to select it from in-game.
 
 ## Features
 ### Ascension
