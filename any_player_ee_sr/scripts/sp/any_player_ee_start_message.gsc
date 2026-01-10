@@ -1,6 +1,6 @@
 init_func()
 {
-	switch ( getdvar( "mapname" ) )
+	switch ( getdvar( #"mapname" ) )
 	{
 		case "zombie_cosmodrome":
 		case "zombie_temple":
@@ -31,7 +31,7 @@ msg()
 	common_scripts\utility::flag_wait( "all_players_connected" );
 	mapname = "";
 
-	switch ( getdvar( "mapname" ) )
+	switch ( getdvar( #"mapname" ) )
 	{
 		case "zombie_cosmodrome":
 			mapname = "Ascension";

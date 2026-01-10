@@ -23,7 +23,8 @@ any_player_ee_sr\maps\zombie_temple_sq_oafc.gsc
 - 0xC836F0CE (v2.0)
 
 any_player_ee_sr\scripts\sp\any_player_ee_start_message.gsc
-- 0x2C3F6655 (v2.0.5–current_sr)
+- 0xA1987CF8 (v2.1.0–current_sr)
+- 0x2C3F6655 (v2.0.5)
 - 0xC36742AA (v2.0.4)
 - 0x47466654 (v2.0.2–v2.0.3)
 - 0xDB04315B
