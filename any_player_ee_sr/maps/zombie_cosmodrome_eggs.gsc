@@ -3,7 +3,7 @@
 #include maps\_utility;
 #include maps\_zombiemode_utility;
 #include maps\_ambientpackage;
-#include maps\_music;
+#include maps\_music; 
 #include maps\_busing;
 #include maps\_zombiemode_audio;
 
@@ -28,13 +28,13 @@
 //	4) Pressure Plate - All players must stand in one area for 120 seconds.
 //		Area is the rocket pad (1378 381 -332).  A clock on the wall will appear
 //		to show you your progress.
-//	5) Lander Words - someone must ride the lander as it's called to spell out the
+//	5) Lander Words - someone must ride the lander as it's called to spell out the 
 //		key phrase.  Letters appear only when the lander is called, but someone must
 //		be on the lander to grab them.
 //		Centrifuge to Storage (L), then back to Centrifuge (U), then Catwalks (N), then back to
 //		Storage (A)
 //	6) Use all weapons in combination @ the focal point (-18 -1366 -173)
-//		Throw a black hole bomb there, then shoot the portal with an upgraded ray gun,
+//		Throw a black hole bomb there, then shoot the portal with an upgraded ray gun, 
 //		an upgraded Thundergun and explode a doll near it before it disappears.
 //
 init()
@@ -100,7 +100,7 @@ init()
 // 			players[i] thread reward_wait();
 // 		}
  	}
-*/
+*/ 
 	teleport_target_event();	// Teleport the device hub
 	reroute_power_event();		// Attempts to activate the Casimir Device
 	sync_switch_event();		// Removes Security Lockdown
@@ -119,16 +119,16 @@ init()
 //
 play_easter_egg_audio( alias, sound_ent, text )
 {
-	if( alias == undefined )
-	{
-		/#
-		IPrintLnBold( text );
-		#/
-		return;
-	}
-
-	sound_ent PlaySound( alias, "sounddone" );
-	sound_ent waittill( "sounddone" );
+    if( alias == undefined )
+    {
+        /#
+        IPrintLnBold( text );
+        #/
+        return;
+    }
+    
+    sound_ent PlaySound( alias, "sounddone" );
+    sound_ent waittill( "sounddone" );
 }
 
 
@@ -170,7 +170,7 @@ teleport_target_event()
 	// Trigger for bomb distance check - lowered the origin so the hit detection pics up all ground levels
 	level.teleport_target_trigger = Spawn( "trigger_radius", teleport_target_start.origin + (0,0,-70), 0, 125, 100 );	// flags, radius, height
 
-	// Function override in _zombiemode_weap_black_hole_bomb, make the bomb check to see
+	// Function override in _zombiemode_weap_black_hole_bomb, make the bomb check to see 
 	//	if it's in our trigger
 	level.black_hole_bomb_loc_check_func = ::bhb_teleport_loc_check;
 	flag_wait( "target_teleported" );
@@ -178,7 +178,7 @@ teleport_target_event()
 	teleport_target_spark Delete();
 	level.black_hole_bomb_loc_check_func = undefined;
 
-	level thread play_egg_vox( "vox_ann_egg1_success", "vox_gersh_egg1", 1 );
+    level thread play_egg_vox( "vox_ann_egg1_success", "vox_gersh_egg1", 1 );
 }
 
 
@@ -202,7 +202,7 @@ bhb_teleport_loc_check( grenade, model, info )
 //	Move the device into position
 teleport_target( grenade, model )
 {
-	level.teleport_target_trigger Delete();
+    level.teleport_target_trigger Delete();
 	level.teleport_target_trigger = undefined;
 
 	// move into the vortex
@@ -223,10 +223,10 @@ teleport_target( grenade, model )
 	level.teleport_target MoveTo( teleport_target_end.origin, 0.05 );
 	level.teleport_target StopLoopSound( 1 );
 	wait( 0.5 );
-
+    
 	level.teleport_target Show();
-	PlayFXOnTag( level._effect[ "black_hole_bomb_event_horizon" ], level.teleport_target, "tag_origin" );
-	level.teleport_target PlaySound( "zmb_gersh_teleporter_go" );
+    PlayFXOnTag( level._effect[ "black_hole_bomb_event_horizon" ], level.teleport_target, "tag_origin" );
+    level.teleport_target PlaySound( "zmb_gersh_teleporter_go" );
 	wait( 2.0 );
 
 	model Delete();
@@ -254,7 +254,7 @@ reroute_power_event()
 	monitor SetModel( "p_zom_monitor_csm_screen_logo" );
 	monitor StopLoopSound( 1 );
 
-	level thread play_egg_vox( "vox_ann_egg2_success", "vox_gersh_egg2", 2 );
+    level thread play_egg_vox( "vox_ann_egg2_success", "vox_gersh_egg2", 2 );
 	level thread activate_casimir_light( 1 );
 }
 
@@ -275,7 +275,7 @@ wait_for_use( monitor )
 				monitor PlaySound( "zmb_comp_activate" );
 				return;
 			}
-
+	        
 			wait(.05);
 		}
 	}
@@ -330,8 +330,8 @@ reveal_switch()
 
 		trig delete();
 	}
-
-	button StopLoopSound( 1 );
+    
+    button StopLoopSound( 1 );
 	button MoveTo( self.origin, time );
 	wait( time );
 
@@ -361,7 +361,7 @@ wait_for_sync_use( ss )
 				playsoundatposition( "zmb_push_button", ss.origin );
 				ss.pressed = 1;
 			}
-
+	        
 			wait(.05);
 		}
 	}
@@ -402,12 +402,12 @@ switch_watcher()
 			if ( pressed == 4 )
 			{
 				flag_set( "switches_synced" );
-
+				
 				for ( i=0; i<switches.size; i++ )
-				{
-					playsoundatposition( "zmb_misc_activate", switches[i].origin );
+			    {
+                    playsoundatposition( "zmb_misc_activate", switches[i].origin );
 				}
-
+				
 				return;
 			}
 			wait( 0.05 );
@@ -422,8 +422,8 @@ switch_watcher()
 		case 3:
 			for ( i=0; i<switches.size; i++ )
 			{
-				playsoundatposition( "zmb_deny", switches[i].origin );
-			}
+                playsoundatposition( "zmb_deny", switches[i].origin );
+		    }
 			break;
 		}
 
@@ -489,9 +489,9 @@ area_timer( time )
 		{
 			continue;
 		}
-
-		self PlaySound( "zmb_pressure_plate_trigger" );
-
+        
+        self PlaySound( "zmb_pressure_plate_trigger" );
+        
 		// Start the countdown
 		time_remaining = time;
 		timer_hand RotatePitch( 360, time );
@@ -565,7 +565,7 @@ area_timer( time )
 
 //###################################################################
 //	Spell out the passkey using lander calls
-//
+//	
 //###################################################################
 lander_passkey_event()
 {
@@ -598,15 +598,15 @@ lander_passkey_event()
 
 	flag_wait( "passkey_confirmed" );
 	level.lander_audio_ent StopLoopSound( 1 );
-	level thread play_egg_vox( "vox_ann_egg5_success", "vox_gersh_egg5", 5 );
+    level thread play_egg_vox( "vox_ann_egg5_success", "vox_gersh_egg5", 5 );
 	level thread activate_casimir_light( 4 );
-	wait(1);
-	level.lander_audio_ent Delete();
+    wait(1);
+    level.lander_audio_ent Delete();
 }
 
 
 //
-//
+//	
 lander_monitor()
 {
 	lander = getent( "lander", "targetname" );
@@ -774,7 +774,7 @@ weapon_combo_event()
 //	See if the bomb hit the target area
 bhb_combo_loc_check( grenade, model, info )
 {
-	if ( IsDefined( level.black_hold_bomb_target_trig ) &&
+	if ( IsDefined( level.black_hold_bomb_target_trig ) && 
 		 grenade IsTouching( level.black_hold_bomb_target_trig ) )
 	{
 		trig = Spawn( "trigger_damage", grenade.origin, 0, 15, 72 );
@@ -887,16 +887,16 @@ kill_trig_on_death( trig )
 	self waittill( "death" );
 
 	trig delete();
-
+	
 	if( flag( "thundergun_hit" ) && !flag( "weapons_combined" ) )
 	{
-		level thread play_egg_vox( "vox_ann_egg6p1_success", "vox_gersh_egg6_fail2", 7 );
+	    level thread play_egg_vox( "vox_ann_egg6p1_success", "vox_gersh_egg6_fail2", 7 );
 	}
 	else if( !flag( "weapons_combined" ) )
 	{
-		level thread play_egg_vox( undefined, "vox_gersh_egg6_fail1", 6 );
+	    level thread play_egg_vox( undefined, "vox_gersh_egg6_fail1", 6 );
 	}
-
+	
 	flag_clear( "thundergun_hit" );
 }
 
@@ -912,12 +912,12 @@ soul_release( model, origin )
 	fx = PlayFXOnTag( level._effect["gersh_spark"], soul, "tag_origin" );
 
 	time = 20;
-
+	
 	model waittill( "death" );
-
+	
 	level thread play_egg_vox( "vox_ann_egg6_success", "vox_gersh_egg6_success", 9 );
 	level thread wait_for_gersh_vox();
-
+	
 	soul MoveZ( 2500, time, time - 1 );
 	wait( time );
 
@@ -930,8 +930,8 @@ soul_release( model, origin )
 
 wait_for_gersh_vox()
 {
-	wait(12.5);
-
+    wait(12.5);
+    
 	// Give reward!
 	players = GetPlayers();
 	for ( i=0; i<players.size; i++ )
@@ -948,7 +948,7 @@ reward_wait()
 	while ( !is_player_valid( self ) ||
 			( self UseButtonPressed() && self in_revive_trigger() ) )
 	{
-		wait( 1.0 );
+		wait( 1.0 ); 
 	}
 
 	level thread maps\_zombiemode_powerups::minigun_weapon_powerup( self, 90 );
@@ -959,32 +959,32 @@ reward_wait()
 
 play_egg_vox( ann_alias, gersh_alias, plr_num )
 {
-	if( IsDefined( ann_alias ) )
-	{
-		level maps\zombie_cosmodrome_amb::play_cosmo_announcer_vox( ann_alias );
-	}
-
-	if( IsDefined( gersh_alias ) )
-	{
-		level maps\zombie_cosmodrome_amb::play_gersh_vox( gersh_alias );
-	}
-
-	if( IsDefined( plr_num ) )
-	{
-		players = get_players();
-		rand = RandomIntRange( 0, players.size );
-
-		players[rand] maps\_zombiemode_audio::create_and_play_dialog( "eggs", "gersh_response", undefined, plr_num );
-	}
+    if( IsDefined( ann_alias ) )
+    {
+        level maps\zombie_cosmodrome_amb::play_cosmo_announcer_vox( ann_alias );
+    }
+    
+    if( IsDefined( gersh_alias ) )
+    {
+        level maps\zombie_cosmodrome_amb::play_gersh_vox( gersh_alias );
+    }
+    
+    if( IsDefined( plr_num ) )
+    {
+        players = get_players();
+        rand = RandomIntRange( 0, players.size );
+        
+        players[rand] maps\_zombiemode_audio::create_and_play_dialog( "eggs", "gersh_response", undefined, plr_num );
+    }
 }
 
 samantha_is_angry()
-{
-	playsoundatposition( "zmb_samantha_earthquake", (0,0,0) );
-	playsoundatposition( "zmb_samantha_whispers", (0,0,0) );
-	wait(6);
-	level clientnotify( "sia" );
-	playsoundatposition( "zmb_samantha_scream", (0,0,0) );
+{   
+    playsoundatposition( "zmb_samantha_earthquake", (0,0,0) );
+    playsoundatposition( "zmb_samantha_whispers", (0,0,0) );
+    wait(6);
+    level clientnotify( "sia" );
+    playsoundatposition( "zmb_samantha_scream", (0,0,0) );
 }
 
 lander_trig()
