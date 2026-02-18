@@ -17,6 +17,11 @@
 
 init()
 {
+	if ( isdefined( level.pluto_sys ) && isdefined( level.pluto_sys["getfunctionname"] ) && [[ level.pluto_sys["getfunctionname"] ]]( ::init ) != "maps/zombie_temple_sq_oafc::init" )
+	{
+		return;
+	}
+
 	PreCacheModel("p_ztem_glyphs_00");
 	declare_sidequest_stage("sq", "OaFC", ::init_stage, ::stage_logic, ::exit_stage);
 	set_stage_time_limit("sq", "OaFC", 5 * 60);	// 5 minute limit.

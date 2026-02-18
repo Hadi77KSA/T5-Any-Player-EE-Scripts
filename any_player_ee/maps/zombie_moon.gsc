@@ -13,6 +13,11 @@
 // ------------------------------------------------------------------------------------------------
 main()
 {
+	if ( isdefined( level.pluto_sys ) && isdefined( level.pluto_sys["getfunctionname"] ) && [[ level.pluto_sys["getfunctionname"] ]]( ::main ) != "maps/zombie_moon::main" )
+	{
+		return;
+	}
+
 	// Performance optimisation control vars.
 	level._num_overriden_models = 0;
 	level._use_choke_weapon_hints = 1;

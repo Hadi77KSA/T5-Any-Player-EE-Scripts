@@ -17,6 +17,10 @@
 
 init()
 {
+	if ( isdefined( level.pluto_sys ) && isdefined( level.pluto_sys["getfunctionname"] ) && [[ level.pluto_sys["getfunctionname"] ]]( ::init ) != "maps/zombie_temple_sq_dgcwf::init" )
+	{
+		return;
+	}
 	
 	flag_init("dgcwf_on_plate");
 	flag_init("dgcwf_sw1_pressed");

@@ -26,6 +26,11 @@
 
 init()
 {
+	if ( isdefined( level.pluto_sys ) && isdefined( level.pluto_sys["getfunctionname"] ) && [[ level.pluto_sys["getfunctionname"] ]]( ::init ) != "maps/zombie_temple_sq::init" )
+	{
+		return;
+	}
+
 	thread scripts\sp\any_player_ee_start_message::init_func();
 	PreCacheModel("p_ztem_skeleton");
 	PreCacheModel("p_ztem_meteorite_small");

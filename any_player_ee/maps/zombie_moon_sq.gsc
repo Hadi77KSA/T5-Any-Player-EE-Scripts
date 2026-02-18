@@ -16,6 +16,11 @@
 
 init()
 {
+	if ( isdefined( level.pluto_sys ) && isdefined( level.pluto_sys["getfunctionname"] ) && [[ level.pluto_sys["getfunctionname"] ]]( ::init ) != "maps/zombie_moon_sq::init" )
+	{
+		return;
+	}
+
 	thread scripts\sp\any_player_ee_start_message::init_func();
 
 	PreCacheModel("p_zom_moon_py_collector_fill");

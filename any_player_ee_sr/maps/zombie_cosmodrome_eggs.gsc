@@ -39,6 +39,11 @@
 //
 init()
 {
+	if ( isdefined( level.pluto_sys ) && isdefined( level.pluto_sys["getfunctionname"] ) && [[ level.pluto_sys["getfunctionname"] ]]( ::init ) != "maps/zombie_cosmodrome_eggs::init" )
+	{
+		return;
+	}
+
 	thread scripts\sp\any_player_ee_start_message::init_func();
 //	NOTE:  Uncomment this to do Solo testing for the easter egg. (and any section which checks the variable)
 //		You will automatically be given a black hole bomb and an upgraded thundergun
