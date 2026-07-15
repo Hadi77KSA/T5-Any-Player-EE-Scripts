@@ -45,5 +45,34 @@ msg()
 			break;
 	}
 
-	self iPrintLn( "^3Any Player EE Mod ^5", mapname );
+	self iPrintLn( "^2Any Player EE Mod ^5", mapname );
+}
+
+override( dvarName, defaultValue, curr_value, display )
+{
+	if ( !isdefined( curr_value ) )
+	{
+		curr_value = defaultValue;
+	}
+
+	if ( !isdefined( display ) )
+	{
+		display = true;
+	}
+
+	if ( getDvar( dvarName ) != "" )
+	{
+		returnVal = getDvarInt( dvarName );
+	}
+	else
+	{
+		returnVal = defaultValue;
+	}
+
+	if ( display && curr_value != returnVal )
+	{
+		iPrintLn( dvarName, ": ", returnVal );
+	}
+
+	return returnVal;
 }

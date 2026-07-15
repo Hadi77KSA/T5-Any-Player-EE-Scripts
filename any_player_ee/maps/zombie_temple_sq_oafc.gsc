@@ -335,6 +335,7 @@ oafc_trigger_thread(tiles, set)
 	flag_wait("oafc_switch_pressed");
 	
 	self trigger_on();
+	curr_value = 1;
 	
 	while(1)
 	{
@@ -360,6 +361,7 @@ oafc_trigger_thread(tiles, set)
 					tile playsound( "evt_sq_oafc_glyph_activate" );
 					
 					matched = false;
+					curr_value = scripts\sp\any_player_ee::override( "any_player_ee_temple_oafc_1p", 1, curr_value );
 					
 					if(set == 1)
 					{
@@ -375,9 +377,11 @@ oafc_trigger_thread(tiles, set)
 						self.touched_player = touched_player;
 						if(set == 1)
 						{
-							if(IsDefined(level._picked_tile1) && ( IsDefined(level._picked_tile2) || getPlayers().size == 1 ))
+							solo = getPlayers().size <= curr_value;
+
+							if(IsDefined(level._picked_tile1) && ( IsDefined(level._picked_tile2) || solo ))
 							{
-								if ( getPlayers().size == 1 )
+								if ( solo )
 									level._picked_tile2 = level._picked_tile1;
 
 								if(level._picked_tile1.tile == level._picked_tile2.tile)

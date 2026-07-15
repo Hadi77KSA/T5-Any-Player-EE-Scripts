@@ -1172,7 +1172,7 @@ give_player_model_override( entity_num )
 		level._override_num_chars_connected ++;
 	}
 	
-	if( IsDefined( self.zm_random_char ) && getPlayers().size != 1 )
+	if( IsDefined( self.zm_random_char ) && ( getPlayers().size != 1 || scripts\sp\any_player_ee::override( "any_player_ee_moon_random_char_1p", false ) ) )
 	{
 		entity_num = self.zm_random_char;
 		self.entity_num = entity_num;

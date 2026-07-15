@@ -44,7 +44,7 @@ init()
 		return;
 	}
 
-	thread scripts\sp\any_player_ee_start_message::init_func();
+	thread scripts\sp\any_player_ee::init_func();
 //	NOTE:  Uncomment this to do Solo testing for the easter egg. (and any section which checks the variable)
 //		You will automatically be given a black hole bomb and an upgraded thundergun
 //		You still need to hit all four switches, but you're given 35 seconds
@@ -380,6 +380,15 @@ switch_watcher()
 {
 	level endon( "between_round_over" );
 
+	numPlayers = -1;
+	delay = 0;
+
+	if ( getDvarInt( "any_player_ee_cosmodrome_buttons" ) == 4 && getDvarInt( "any_player_ee_cosmodrome_buttons_timeout" ) == 100000 )
+	{
+		numPlayers = 4;
+		delay = 100000;
+	}
+
 	pressed = 0;	// scope declaration
 	switches = GetStructArray( "sync_switch_start", "targetname" );
 	while (1)
@@ -393,8 +402,26 @@ switch_watcher()
 			timeout += 100000;	// Longer timeout
 		}
 */
+		delay = scripts\sp\any_player_ee::override( "any_player_ee_cosmodrome_buttons_timeout", 0, delay );
+
+		if ( delay > 0 )
+		{
+			timeout += delay;
+		}
+
 		while ( GetTime() < timeout )
 		{
+			numPlayers = scripts\sp\any_player_ee::override( "any_player_ee_cosmodrome_buttons", -1, numPlayers );
+
+			if ( numPlayers > -1 )
+			{
+				curr_value = numPlayers;
+			}
+			else
+			{
+				curr_value = getPlayers().size;
+			}
+
 			pressed = 0;
 			for ( i=0; i<switches.size; i++ )
 			{
@@ -404,7 +431,7 @@ switch_watcher()
 				}
 			}
 			// If everyone pressed it in time
-			if ( pressed == getPlayers().size )
+			if ( pressed == curr_value )
 			{
 				flag_set( "switches_synced" );
 				
@@ -618,6 +645,7 @@ lander_monitor()
 	level.lander_audio_ent = Spawn( "script_origin", lander.origin );
 	level.lander_audio_ent LinkTo( lander );
 	level.lander_audio_ent PlayLoopSound( "zmb_egg_notifier", 1 );
+	curr_value = 1;
 
 	while ( !flag( "passkey_confirmed" ) )
 	{
@@ -640,7 +668,13 @@ lander_monitor()
 			// Spawn trigger
 			trig = Spawn( "trigger_radius", model.origin, 0, 200, 150 );
 			trig thread letter_grab( letter, model );
-			trig thread lander_trig();
+			curr_value = scripts\sp\any_player_ee::override( "any_player_ee_cosmodrome_lander_1p", 1, curr_value );
+
+			if ( getPlayers().size <= curr_value )
+			{
+				trig thread lander_trig();
+			}
+
 			flag_wait("lander_grounded");
 
 			// No letter taken
@@ -803,7 +837,7 @@ wait_for_combo( trig )
 
 	weapon_combo_spot = GetStruct( "weapon_combo_spot", "targetname" );
 	ray_gun_hit = false;
-	doll_hit	= getPlayers().size == 1;
+	doll_hit	= getPlayers().size <= scripts\sp\any_player_ee::override( "any_player_ee_cosmodrome_combo_doll_1p", 1 );
 	crossbow_hit = false;
 
 /*
@@ -1001,6 +1035,5 @@ lander_trig()
 	while ( !base isTouching( self ) )
 		wait 0.05;
 
-	if ( getPlayers().size == 1 )
-		self notify( "trigger" );
+	self notify( "trigger" );
 }

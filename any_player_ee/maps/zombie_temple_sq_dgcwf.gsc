@@ -174,8 +174,14 @@ plate_trigger()
 	self thread begin_dgcwf_vox();
 	
 	self playloopsound( "evt_sq_dgcwf_waterthrash_loop", 2 );
+	numPlayers = scripts\sp\any_player_ee::override( "any_player_ee_temple_dgcwf", 1, 1, false );
+
+	if ( numPlayers <= -1 )
+	{
+		numPlayers = 1;
+	}
 	
-	if(get_players().size == 1)
+	if(get_players().size <= numPlayers)
 	{
 		flag_set("dgcwf_on_plate");
 		return;
@@ -202,16 +208,23 @@ onPlayerDisconnect( players, trig )
 	level endon( "sq_DgCWf_over" );
 	self waittill( "disconnect" );
 	level.sq_dgcwf_trig--;
-	level._on_plate = 0;
+	numPlayers = scripts\sp\any_player_ee::override( "any_player_ee_temple_dgcwf", 1 );
 
-	for ( i = 0; i < players.size && level._on_plate < 4; i++ )
+	if ( numPlayers > -1 )
 	{
-		if ( isdefined( players[i] ) && players[i] isTouching( trig ) && players[i].sessionstate != "spectator" )
-			level._on_plate++;
-	}
+		level._on_plate = 0;
 
-	if ( level.sq_dgcwf_trig < 4 )
-		level._on_plate += 4 - level.sq_dgcwf_trig;
+		for ( i = 0; i < players.size && level._on_plate < 4; i++ )
+		{
+			if ( isdefined( players[i] ) && players[i] isTouching( trig ) && players[i].sessionstate != "spectator" )
+				level._on_plate++;
+		}
+
+		total = level.sq_dgcwf_trig - numPlayers;
+
+		if ( total < 3 )
+			level._on_plate += 3 - total;
+	}
 }
 
 begin_dgcwf_vox()
@@ -305,14 +318,29 @@ init_stage()
 {
 	
 	level._on_plate = 0;
-	level.sq_dgcwf_trig = get_players().size;
+	curr_value = scripts\sp\any_player_ee::override( "any_player_ee_temple_dgcwf", 1 );
+
+	if ( curr_value > -1 )
+	{
+		numPlayers = curr_value;
+	}
+	else
+	{
+		numPlayers = 1;
+	}
 	
-	if(get_players().size > 1)
+	if(get_players().size > numPlayers)
 	{
 		flag_clear("dgcwf_on_plate");
+		level.sq_dgcwf_trig = get_players().size;
 
-		if ( level.sq_dgcwf_trig < 4 )
-			level._on_plate += 4 - level.sq_dgcwf_trig;
+		if ( curr_value > -1 )
+		{
+			total = level.sq_dgcwf_trig - numPlayers;
+
+			if ( total < 3 )
+				level._on_plate += 3 - total;
+		}
 	}
 		
 	flag_clear("dgcwf_sw1_pressed");

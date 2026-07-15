@@ -57,6 +57,21 @@ On co-op, requires all players except one to be at the bottom of the water slide
 The Vril Generator is given to the player playing as Richtofen regardless of the number of players and regardless of the completions of the previous maps' Easter Eggs.  
 Additionally, on solo, the player will always spawn as Richtofen.
 
+### Configuration Options
+| Name | Description |
+| --- | :--- |
+| `any_player_ee_cosmodrome_buttons` | (0-4) Number of required buttons to press on monkeys round. Default: -1. Default_SR: 4. Vanilla: 4 |
+| `any_player_ee_cosmodrome_buttons_timeout` | (Min: 0) Amount of time to increase the button timeout, in milliseconds. Default: 0. Default_SR: 100000. Vanilla: 0 |
+| `any_player_ee_cosmodrome_lander_1p` | (0-4) Min number of players for which solo lander behaviour will be in effect. Default: 1. Default_SR: 1. Vanilla: 0 |
+| `any_player_ee_cosmodrome_combo_doll_1p` | (0-4) Min number of players for which solo behaviour for Matryoshka Dolls requirement for damaging the orb will be in effect. Default: 1. Default_SR: 1. Vanilla: 0 |
+| `any_player_ee_temple_buttons` | (0-4) Min number of required buttons to enter eclipse. Default: -1. Default_SR: -1. Vanilla: 4 |
+| `any_player_ee_temple_buttons_single` | (0-1) Restrict the player to be only able to press one button at a time. Default: 1. Default_SR: 1. Vanilla: 1 |
+| `any_player_ee_temple_buttons_timeout` | (Min: 0) Amount of time to increase the button timeout, in seconds. Default: 0. Default_SR: 0. Vanilla: 0 |
+| `any_player_ee_temple_oafc_1p` | (0-4) Min number of players for which solo tile matching behaviour will be in effect. Default: 1. Default_SR: 1. Vanilla: 0 |
+| `any_player_ee_temple_dgcwf` | (0-4) Number of compensating players which will be considered to be already on the pressure plate at the bottom of the water silde. Default: 1. Default_SR: 1. Vanilla: -1 |
+| `any_player_ee_moon_random_char_1p` | (0-1) Allow solo character randomisation. Default: 0. Default_SR: 1. Vanilla: 1 |
+| `any_player_ee_moon_generator` | (0-1) Force give the Vril Generator. Default: 1. Default_SR: 0. Vanilla: 0 |
+
 ## FAQ
 ### Q: I am stuck on some Easter Egg step. Could you help?
 A: Generally, if you ask for help with any Easter Egg step, I will try to assist you. Note that the scripts do not modify anything outside of what is mentioned. Refer to the **Features** section for the changes made by the scripts, otherwise you could check existing guides such as the ones from the [CoD Fandom Wiki](https://callofduty.fandom.com/wiki/Category:Call_of_Duty:_Black_Ops_Zombies_Main_Quests).

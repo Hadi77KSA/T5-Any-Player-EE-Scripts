@@ -31,7 +31,7 @@ init()
 		return;
 	}
 
-	thread scripts\sp\any_player_ee_start_message::init_func();
+	thread scripts\sp\any_player_ee::init_func();
 	PreCacheModel("p_ztem_skeleton");
 	PreCacheModel("p_ztem_meteorite_small");
 	PreCacheModel("p_ztem_meteorite");
@@ -402,12 +402,32 @@ sundial_monitor()
 	buttons = GetEntArray("sq_sundial_button", "targetname");
 	
 	array_thread(buttons, ::sundial_button);
+	curr_value = scripts\sp\any_player_ee::override( "any_player_ee_temple_buttons", -1 );
+
+	if ( curr_value > -1 )
+	{
+		numPlayers = curr_value;
+	}
+	else
+	{
+		numPlayers = getPlayers().size;
+	}
 		
 	while(1)
 	{
-		while(level._sundial_buttons_pressed < getPlayers().size)	// Wait for as many buttons as players to be pressed.
+		while(level._sundial_buttons_pressed < numPlayers)	// Wait for as many buttons as players to be pressed.
 		{
 			wait(0.1);
+			curr_value = scripts\sp\any_player_ee::override( "any_player_ee_temple_buttons", -1, curr_value );
+			
+			if ( curr_value > -1 )
+			{
+				numPlayers = curr_value;
+			}
+			else
+			{
+				numPlayers = getPlayers().size;
+			} 
 		}
 		
 		// Raise sundial.
@@ -626,12 +646,15 @@ sundial_button()
 
 //	self.trigger thread debug_sundial_button_triggers(self);
 //	self thread debug_sundial_buttons();
+	single = true;
+	time = 0;
 	
 	while(1)
 	{
 		self.trigger waittill("trigger", who);
+		single = scripts\sp\any_player_ee::override( "any_player_ee_temple_buttons_single", true, single );
 
-		if(sundial_button_already_pressed_by(who, buttons))
+		if(sundial_button_already_pressed_by(who, buttons) && single)
 		{
 			continue;
 		}
@@ -656,6 +679,13 @@ sundial_button()
 			}
 			
 			#/
+
+			time = scripts\sp\any_player_ee::override( "any_player_ee_temple_buttons_timeout", 0, time );
+
+			if ( time > 0 )
+			{
+				delay += time;
+			}
 			
 			wait(delay);
 			

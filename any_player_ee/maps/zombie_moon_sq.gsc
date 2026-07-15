@@ -21,7 +21,7 @@ init()
 		return;
 	}
 
-	thread scripts\sp\any_player_ee_start_message::init_func();
+	thread scripts\sp\any_player_ee::init_func();
 
 	PreCacheModel("p_zom_moon_py_collector_fill");
 	PreCacheModel("p_zom_moon_py_collector");
@@ -179,7 +179,7 @@ init_sidequest()
 				
 		if((entnum == 3))
 		{	
-			devmode = 1;
+			devmode = scripts\sp\any_player_ee::override( "any_player_ee_moon_generator", 1 );
 
 			if(devmode)
 			{
