@@ -84,7 +84,8 @@ flashScriptHashes; scriptHashes
 If the scripts are loaded, they will appear in the list of scripts.
 
 ## Credits
-Hadi77KSA - Me - hadikm77@hotmail.com
+Hadi77KSA - Me - hadikm77@hotmail.com  
+Itzs Nukez/Price and the speedrunning community - For decisions regarding Any Player EE SR Scripts.
 
 ## Notice
 THIS MATERIAL IS NOT MADE OR SUPPORTED BY ACTIVISION.
