@@ -69,7 +69,7 @@ Additionally, on solo, the player will always spawn as Richtofen.
 | `any_player_ee_temple_buttons_single` | (0-1) Restrict the player to be only able to press one button at a time. Default: 1. Default_SR: 1. Vanilla: 1 |
 | `any_player_ee_temple_buttons_timeout` | (Min: 0) Amount of time to increase the button timeout, in seconds. Default: 0. Default_SR: 0. Vanilla: 0 |
 | `any_player_ee_temple_oafc_1p` | (0-4) Min number of players for which solo tile matching behaviour will be in effect. Default: 1. Default_SR: 1. Vanilla: 0 |
-| `any_player_ee_temple_dgcwf` | (0-4) Number of compensating players which will be considered to be already on the pressure plate at the bottom of the water silde. Default: 1. Default_SR: 1. Vanilla: -1 |
+| `any_player_ee_temple_dgcwf` | (0-4) Max number of players who will not be required on the pressure plate at the bottom of the water silde. Default: 1. Default_SR: 1. Vanilla: -1 |
 | `any_player_ee_moon_random_char_1p` | (0-1) Allow solo character randomisation. Default: 0. Default_SR: 1. Vanilla: 1 |
 | `any_player_ee_moon_generator` | (0-1) Force give the Vril Generator. Default: 1. Default_SR: 0. Vanilla: 0 |
 
