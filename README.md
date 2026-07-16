@@ -20,8 +20,9 @@ Following this method makes the scripts be loaded automatically without needing 
 
 - Follow steps 1 & 2 from the main installation instructions.
 - Go to `%localappdata%\Plutonium\storage\t5` by pressing Win+R then pasting the mentioned path then press OK.
-- Open the `any_player_ee`/`any_player_ee_sr` folder and copy the `any_player_ee.iwd`/`any_player_ee_sr.iwd` file from inside of it.
-- Paste the `any_player_ee.iwd`/`any_player_ee_sr.iwd` file into the `t5` folder.
+- Open the `any_player_ee`/`any_player_ee_sr` folder and copy the `any_player_ee.iwd` file from inside of it.
+- Paste the `any_player_ee.iwd` file into the `t5` folder.
+  * Additionally for the speedrun version, copy the `any_player_ee_sr.cfg` file and paste it into the `t5` folder, then use the console command `exec any_player_ee_sr.cfg` before attempting an Easter Egg to make the mod switch to the speedrun version.
 
 ## Features
 ### Ascension
