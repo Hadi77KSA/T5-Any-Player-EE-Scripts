@@ -25,7 +25,8 @@ any_player_ee_sr\maps\zombie_temple_sq.gsc
 - 0xC7C6112E (v2.0–v2.0.2)
 
 any_player_ee_sr\maps\zombie_temple_sq_dgcwf.gsc
-- 0x1D396CFE (v2.3.0–current)
+- 0xA1E4DDBA (v2.3.1–current)
+- 0x1D396CFE (v2.3.0)
 - 0x64B62C34 (v2.2.0)
 - 0x87C587F5
 - 0x4583A547 (v2.0.4–v2.1.0)

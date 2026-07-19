@@ -213,17 +213,20 @@ onPlayerDisconnect( players, trig )
 	if ( numPlayers > -1 )
 	{
 		level._on_plate = 0;
-
-		for ( i = 0; i < players.size && level._on_plate < 4; i++ )
-		{
-			if ( isdefined( players[i] ) && players[i] isTouching( trig ) && players[i].sessionstate != "spectator" )
-				level._on_plate++;
-		}
-
 		total = level.sq_dgcwf_trig - numPlayers;
 
 		if ( total < 3 )
+		{
 			level._on_plate += 3 - total;
+		}
+
+		for ( i = players.size - 1; i >= 0 && level._on_plate < 4; i-- )
+		{
+			if ( isdefined( players[i] ) && players[i] isTouching( trig ) && players[i].sessionstate != "spectator" )
+			{
+				level._on_plate++;
+			}
+		}
 	}
 }
 
